@@ -20,7 +20,6 @@ const 감소 = ()=>{
 */
 
 const inputValue = ref('');
-
 const todoList = ref([
 { text:'vue',done:false},
 { text:'react',done:true},
@@ -30,8 +29,10 @@ const todoList = ref([
 console.log(inputValue.value);
 
 const handleClickButton =() =>{
-  todoList.value.push(inputValue.value);
-  console.log(todoList.value);
+  const text = inputValue.value;
+  todoList.value.push({
+    text: text, done: false
+  });
 }
 
 const handleChange = (event)=>{
